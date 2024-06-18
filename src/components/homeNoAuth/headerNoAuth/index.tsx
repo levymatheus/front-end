@@ -6,9 +6,9 @@ const HeaderNoAuth = function () {
     return (
         <>
             <div className={styles.ctaSection}>
-                <img src="/homeNoAuth/logoCta.png" alt="logoCta" className={styles.imgCta} />
+                <img src="/homeNoAuth/logoCta.svg" alt="logoCta" className={styles.imgCta} />
                 <p>Se cadastre para ter acesso as notícias</p>
-                <img src="/homeNoAuth/logoCta.png" alt="logoCta" className={styles.imgCta} />
+                <img src="/homeNoAuth/logoCta.svg" alt="logoCta" className={styles.imgCta} />
             </div>
             <Container className={styles.nav}>
                 <img src="/gamersNews.png" alt="logoGamersNews" className={styles.imgLogoNav} />

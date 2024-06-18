@@ -1,0 +1,137 @@
+@import '../../../../styles/colors.module.scss';
+.capaHome {
+    width: 700px;
+    transition: 0.3s;
+    &:hover {
+        transform: scale(1.01);
+    }
+}
+.subTitle {
+    font-size: 19px;
+    font-weight: bold;
+    color: $blueRoyal;
+}
+
+.title {
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 45px;
+}
+
+.description {
+    font-size: 20px;
+    color: $lightGray;
+    margin: 20px 0px 40px 0px;
+}
+
+
+.href{
+    text-decoration: none;
+
+}
+
+.btnCta {
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 8px 30px;
+    border: 2px solid $blueRoyal;
+    .btnImg {
+        width: 35px;
+    }
+    &:hover {
+        border-color: $lightGray;
+        color: $lightGray;
+        background-color: transparent;
+    }
+}
+
+.arrowDown {
+    width: 30px;
+}
+
+@media(max-width: 1399px) and (min-width: 991px) {
+    .capaHome {
+        width: 500px;
+    }
+    .title {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    
+    .description {
+        font-size: 16px;
+    }
+}
+
+@media(max-width: 991px) {
+    .capaHome {
+        display: flex;
+        margin: 50px auto;
+        width: 400px;
+    }
+    .title {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    
+    .description {
+        font-size: 13px;
+    }
+
+    .btnImg {
+        width: 15px;
+    }
+}
+
+@media(max-width: 767px) {
+    .capaHome {
+        width: 95%;
+    }
+    .title {
+        font-size: 35px;
+        line-height: 34px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+}
+
+@media(max-width: 450px) {
+    .capaHome {
+        width: 95%;
+    }
+    .title {
+        font-size: 30px;
+        line-height: 34px;
+    }
+
+    .description {
+        font-size: 15px;
+    }
+
+    .btnCta {
+        padding: 10px 24px;
+    }
+}
+
+@media(max-width: 389px) {
+    .capaHome {
+        width: 95%;
+    }
+    .title {
+        font-size: 27px;
+        line-height: 34px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .btnCta {
+        padding: 5px 15px;
+    }
+}

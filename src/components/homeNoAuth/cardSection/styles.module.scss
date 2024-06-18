@@ -1,0 +1,84 @@
+@import "../../../../styles/colors.module.scss";
+
+.sectionTitle {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin: 50px 0px 30px 0px;
+}
+
+.card {
+    width: 340px;
+    height: 280px;
+    border-radius: 8px;
+    padding: 14px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: 0.3s;
+    .cardTitle {
+        transition: 0.3s;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+    .cardDescription {
+        font-size: 14px;
+        font-weight: 700;
+        color: $lightGray;
+    }
+    &:hover {
+        transform: scale(1.03);
+        .cardTitle{
+            font-size: 18px;
+            margin-left: 8px;
+        }
+    }
+}
+
+.card1 {
+    @extend .card;
+    background-image: url("../../../../public/homeNoAuth/homeNoAuth_GOWR.png");
+}
+    
+
+
+.card2 {
+    @extend .card;
+    background-image: url("../../../../public/homeNoAuth/homeNoAuth_cs2.png");
+    
+}
+
+.card3 {
+    @extend .card;
+    background-image: url("../../../../public/homeNoAuth/homeNoAuth_Valorant.png");
+    
+}
+
+.card4 {
+    @extend .card;
+    background-image: url("../../../../public/homeNoAuth/homeNoAuth_roblox.png");
+    
+}
+
+.card5 {
+    @extend .card;
+    background-image: url("../../../../public/homeNoAuth/homeNoAuth_MW2.jpg");
+    
+}
+
+.card6 {
+    @extend .card;
+    background-image: url("../../../../public/homeNoAuth/gamersNews_homeNoAuth.png");
+    
+}
+
+@media (max-width: 350px) {
+    .card {
+        
+        background-size: contain; // Ajusta o tamanho da imagem para cobrir o card
+        background-position: center; // Centraliza a imagem
+        background-repeat: no-repeat; // Evita a repetição da imagem
+        margin: 20px 0px -50px 0px;
+    }
+}
