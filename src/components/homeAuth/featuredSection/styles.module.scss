@@ -1,0 +1,100 @@
+@import "../../../../styles/colors.module.scss";
+
+.title {
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 50px;
+    width: 660px;
+}
+
+.description {
+    color: $lightGray;
+    
+    font-size: 21px;
+    width: 660px;
+    height: 300px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    text-overflow: clip;
+    overflow:auto;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: bold;
+    padding: 10px 35px;
+
+    &:hover {
+        border-color: $blueRoyal;
+        background-color: transparent;
+        color: $lightGray
+    }
+
+}
+
+.buttonImg {
+    width: 35px;
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 767px) {
+    .title {
+        width: 95%;
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    .description {
+        width: 95%;
+        font-size: 18px;
+        margin-top: 25px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 575px) {
+    .title {
+        width: 95%;
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    .description {
+        width: 95%;
+        font-size: 18px;
+        margin-top: 25px;
+        height: 200px;
+    }
+    .button {
+        font-size: 12px;
+        padding: 5px 20px;
+    }
+    .buttonImg {
+        width: 30px;
+    }
+}
+
+@media (max-width: 400px) {
+    .title {
+        font-size: 25px;
+        line-height: 25px;
+    }
+
+    .description {
+        font-size: 18px;
+        margin-top: 25px;
+        height: 100px;
+    }
+
+    .button {
+        font-size: 12px;
+        padding: 5px 20px;
+    }
+
+    .buttonImg {
+        width: 25px;
+    }
+}

@@ -12,8 +12,8 @@ interface props {
 const SlideComponent = function ({ game }: props) {
   let slideCount = 0
 
-  if (game.length > 4) {
-    slideCount = 4
+  if (game.length > 6) {
+    slideCount = 6
   } else if (game) {
     slideCount = game.length
   }
@@ -26,8 +26,8 @@ const SlideComponent = function ({ game }: props) {
         perMove: 1,
         width: slideCount * 300,
         pagination: false,
-        arrows: game.length > 4 ? true : false,
-        drag: game.length > 4 ? true : false,
+        arrows: game.length > 6 ? true : false,
+        drag: game.length > 6 ? true : false,
         breakpoints: {
           1350: {
             perPage: slideCount >= 2 ? 2 : 1,
