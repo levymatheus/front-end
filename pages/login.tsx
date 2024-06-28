@@ -82,7 +82,6 @@ const Login = function () {
                 </Form>
                 <ToastComponent isOpen={toastIsOpen} message={toastMessage} color={toastColor} />
             </Container>
-            <Footer />
         </main>
     </>
 }
