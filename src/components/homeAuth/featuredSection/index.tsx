@@ -4,15 +4,15 @@ import gameService, { GameType } from "@/src/services/gameService"
 import HeaderAuth from "../../common/headerAuth"
 import { Button, Container } from "reactstrap"
 import Link from "next/link"
+import PageSpinner from "../../common/spinner"
 
 const FeaturedSection = function () {
     const { data, error } = useSWR('/featured', gameService.getFeaturedGames)	
     if (error) return error
-    if (!data) 
-    return (
-    <>
-    <p>Loading...</p>
-    </>)
+    if (!data) {
+        return <PageSpinner />
+    }
+  
 
     return( <>
     {data.data?.map((game: GameType) => (

@@ -2,15 +2,14 @@ import useSWR from "swr"
 import styles from "../../../../styles/slideCategory.module.scss"
 import gameService from "@/src/services/gameService"
 import SlideComponent from "../../common/slideComponent"
+import PageSpinner from "../../common/spinner"
 
 const FavoriteCategory = function () {
     const { data, error } = useSWR('/favorites', gameService.getFavGames)	
     if (error) return error
-    if (!data) 
-    return (
-    <>
-    <p>Loading...</p>
-    </>)
+    if (!data) {
+        return <PageSpinner />
+    }
 
     return <>
     <p className={styles.titleCategory}>Meus jogos favoritos</p>
