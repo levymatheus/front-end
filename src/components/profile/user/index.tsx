@@ -18,7 +18,6 @@ const UserForm = function () {
     const [created_at, setCreated_at] = useState('')
     const date = new Date(created_at)
     const month = date.toLocaleDateString("default", { month: "long" })
-    console.log(email)
 
     useEffect(() => {
 
