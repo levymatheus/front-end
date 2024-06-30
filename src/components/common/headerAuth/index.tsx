@@ -2,9 +2,9 @@ import { Container, Form, Input } from 'reactstrap';
 import styles from './styles.module.scss';
 import Link from 'next/link';
 import Modal from 'react-modal';
-import { use, useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { profile } from 'console';
+
 import profileService from '@/src/services/profileService';
 
 Modal.setAppElement('#__next')
@@ -13,6 +13,19 @@ const HeaderAuth = function () {
 const router = useRouter()   
 const [modalOpen, setModalOpen] = useState(false)
 const [initials, setInitials] = useState('')
+const [searchName, setSearchName] = useState('')
+
+const handleSearch = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    
+    router.push(`/search?name=${searchName}`)
+    setSearchName('')
+} 
+
+const handleSearchClick = () => {
+    router.push(`/search?name=${searchName}`)
+    setSearchName('')
+}
 
 useEffect(() => {
     profileService.fetchCurrent().then((user) => {
@@ -32,16 +45,19 @@ const handleLogout = () => {
     router.push('/')
 }
 
+
+
     return <>
     <Container className={styles.nav} >
         <Link href="/home">
         <img src="/gamersNews.png" alt="logoGamersNews" className={styles.imgLogoNav} />
         </Link>
         <div className="d-flex align-items-center">
-            <Form>
-                <Input type="search" name='search' placeholder="Pesquisar" className={styles.input} />
+            <Form onSubmit={handleSearch}>
+                <Input type="search" name='search' placeholder="Pesquisar" className={styles.input} value={searchName} 
+                onChange={(event)=> setSearchName(event.currentTarget.value.toLowerCase())} />
             </Form>
-            <img src="/homeAuth/iconSearch.svg" alt="search" className={styles.searchImg} />
+            <img src="/homeAuth/iconSearch.svg" alt="search" className={styles.searchImg} onClick={handleSearchClick} />
             <p className={styles.userProfile} onClick={handleOpenModal}>{initials}</p>
         </div>
         <Modal isOpen={modalOpen} onRequestClose={handleCloseModal} shouldCloseOnEsc={true} className={styles.modal} overlayClassName={styles.overlayModal}>
