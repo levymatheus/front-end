@@ -73,6 +73,30 @@ const gameService = {
         })
         return res;
     },
+    like: async (gameId: number | string) => {
+        const token = sessionStorage.getItem('gamersnews-token');
+
+        const res = await api.post(`/likes`, { gameId }, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).catch((error) => {
+            return error.response;
+        })
+        return res;
+    },
+    removeLike: async (gameId: number | string) => {
+        const token = sessionStorage.getItem('gamersnews-token');
+
+        const res = await api.delete(`/likes/${gameId}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
+        }).catch((error) => {
+            return error.response;
+        })
+        return res;
+    },
     getSearch: async (name: string) => {
         const token = sessionStorage.getItem('gamersnews-token');
 
@@ -84,7 +108,20 @@ const gameService = {
             return error.response;
         })
         return res;
-    }
+    },
+    getNews : async (id: number | string) => {
+        const token = sessionStorage.getItem('gamersnews-token');
+
+        const res = await api.get(`/games/${id}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).catch((error) => {
+            return error.response;
+        })
+        return res;
+    },
+
 }
 
 export default gameService;
