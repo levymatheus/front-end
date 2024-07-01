@@ -9,7 +9,7 @@ interface props {
 const SearchCard = ({ game }: props ) => {
     return( 
     <>
-    <Link style={{textDecoration: "none"}} href={`/games/${game.id}`} >
+    <Link style={{textDecoration: "none"}} href={`/game/${game.id}`} >
         <div className={styles.searchCard}>
             <img src={`${process.env.NEXT_PUBLIC_BASEURL}/${game.thumbnailUrl}`} alt={game.name} className={styles.searchCardImg} />
             <p  className={styles.searchCardTitle}>{game.name}</p>

@@ -1,0 +1,65 @@
+@import "../../../styles/colors.module.scss";
+
+.newCard{
+    border: 1px solid $lightGray;
+    margin-bottom: 20px;
+    width: 550px;
+    height: 190px;
+    cursor: pointer;
+    padding: 10px 14px;
+    overflow: hidden;
+    transition: 0.5s;
+    &:hover {
+        border-color: $blueRoyal;
+        height: 210px;
+    }
+}
+
+.newOrderTime {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.newOrder {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.newTime {
+    color: $lightGray;
+}
+
+.newTitleDescription {
+    text-align: center;
+    margin: 10px 0px;
+}
+
+.newTitle {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.newDescription {
+    color: $lightGray;
+}
+
+@media(max-width: 570px) {
+    .newCard {
+        width: 95%;
+    }
+}
+
+@media(max-width: 400px) {
+    .newOrderTime{
+        gap: 25px;
+    }
+    .newTitle {
+    font-size: 18px;
+    }
+    .newDescription {
+        word-break: break-all;
+        font-size: 14px;
+    }
+}

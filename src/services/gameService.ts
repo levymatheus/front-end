@@ -14,7 +14,7 @@ export type GameType = {
     name: string;
     thumbnailUrl: string;
     synopsis: string;
-    games?: newType[];
+    news?: newType[];
 }
 
 const gameService = {
@@ -24,6 +24,7 @@ const gameService = {
         })
         return res;
     },
+
     getFeaturedGames: async () => {
         const token = sessionStorage.getItem('gamersnews-token');
 
@@ -36,31 +37,75 @@ const gameService = {
         })
         return res;
     },
+
+    like: async (gameId: number | string) => {
+        const token = sessionStorage.getItem("gamersnews-token");
+    
+      const res = await api
+      .post(
+          "/likes",
+        { gameId },
+        {
+            headers: {
+              Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      .catch((error) => {
+          console.log(error.response.data.message);
+    
+        return error.response;
+      });
+      console.log(res);
+      return res;
+    },
+
+    removeLike: async (gameId: number | string) => {
+        const token = sessionStorage.getItem("gamersnews-token");
+    
+      const res = await api
+      .delete(`/likes/${gameId}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+        },
+      })
+      .catch((error) => {
+          console.log(error.response.data.message);
+    
+        return error.response;
+      });
+    
+      return res;
+    },
+
     addToFav: async (gameId: number | string) => {
         const token = sessionStorage.getItem('gamersnews-token');
 
-        const res = await api.post(`/favorites`, { gameId }, {
+        const res = await api.post("/favorites", { gameId }, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
         }).catch((error) => {
             return error.response;
         })
+
         return res;
     },
+
     removefav: async (gameId: number | string) => {
         const token = sessionStorage.getItem('gamersnews-token');
 
-        const res = await api.delete(`/favorites`, {
+        const res = await api.delete(`/favorites/${gameId}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             },
-            data: { gameId }
         }).catch((error) => {
             return error.response;
         })
+        
         return res;
     },
+    
     getFavGames : async () => {
         const token = sessionStorage.getItem('gamersnews-token');
 
@@ -73,30 +118,7 @@ const gameService = {
         })
         return res;
     },
-    like: async (gameId: number | string) => {
-        const token = sessionStorage.getItem('gamersnews-token');
 
-        const res = await api.post(`/likes`, { gameId }, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }).catch((error) => {
-            return error.response;
-        })
-        return res;
-    },
-    removeLike: async (gameId: number | string) => {
-        const token = sessionStorage.getItem('gamersnews-token');
-
-        const res = await api.delete(`/likes/${gameId}`, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            },
-        }).catch((error) => {
-            return error.response;
-        })
-        return res;
-    },
     getSearch: async (name: string) => {
         const token = sessionStorage.getItem('gamersnews-token');
 
@@ -109,6 +131,7 @@ const gameService = {
         })
         return res;
     },
+    
     getNews : async (id: number | string) => {
         const token = sessionStorage.getItem('gamersnews-token');
 

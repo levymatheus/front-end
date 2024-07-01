@@ -1,0 +1,97 @@
+@import "./colors.module.scss";
+
+.gameInfo {
+    margin-top:  -750px;
+}
+
+.gameTitle {
+    font-size: 40px;
+    font-weight: bold;
+    padding-bottom: 25px;
+    width: 700px;
+}
+
+.gameDescription {
+    color: $lightGray;
+    width: 750px;
+    padding-bottom: 25px;
+    font-size: 21px;
+}
+
+.gameBtn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    padding: 5px 35px;
+    border-color: $blueRoyal;
+    &:hover {
+        border-color: $blueRoyalDark;
+        color: $lightGray;
+        background-color: transparent;
+    }
+}
+
+.buttonImg {
+    width: 35px;
+    margin: 0;
+    padding: 0;
+}
+
+.interactions {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0px;
+}
+
+.interactionImages {
+    width: 36px;
+    cursor: pointer;
+}
+
+.newsInfo {
+    padding: 60px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newsDivision {
+    font-weight: bold;
+    border-bottom: 1px solid $blueRoyal;
+    padding: 3px 14px;
+    margin-bottom: 10px;
+}
+
+.newsLenght {
+    color: $lightGray;
+    margin-bottom: 40px;
+}
+
+@media(max-width: 805px) {
+    .gameTitle {
+        font-size: 26px;
+        width: 99%;
+    }
+    .gameDescription {
+        width: 95%;
+    }
+}
+
+@media(max-width: 400px) {
+    .gameInfo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .gameTitle {
+        font-size: 24px;
+    }
+    .gameDescription {
+        font-size: 16px;
+    }
+}
+
