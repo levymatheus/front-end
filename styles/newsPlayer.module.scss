@@ -1,0 +1,20 @@
+.gameTitle {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.player {
+    max-width: 100% ; 
+}
+
+
+@media(max-width: 457px) {
+    .gameTitle{
+        font-size: 20px;
+        padding: 0px 10px;
+    }
+    .player {
+        max-width: 100% ; 
+    }
+    
+}

@@ -1,11 +1,15 @@
-import { newType } from '@/src/services/gameService'
+import { GameType, newType } from '@/src/services/gameService'
 import styles from './styles.module.scss'
+import { useRouter } from 'next/router'
 
 interface props {
     news: newType
+    game: GameType
 }
 
-const NewsList = function ({news}: props) {
+const NewsList = function ({news, game}: props) {
+    const router = useRouter()
+
     const handleSecondsToMin = (totalSeconds: number) => {
         const minutes = Math.floor(totalSeconds / 60);
         const seconds = totalSeconds % 60;
@@ -18,9 +22,13 @@ const NewsList = function ({news}: props) {
         return result;
     }
 
+    const handleNewsPlayer = () => {
+        router.push(`/game/news/${news.order - 1}?gameId=${game.id}`)
+    }
+
     return (
         <>
-        <div className={styles.newCard}>
+        <div className={styles.newCard} onClick={handleNewsPlayer}>
             <div className={styles.newOrderTime}>
             <p className={styles.newOrder}>Notícia N° {news.order}</p>
             <p className={styles.newTime}>{handleSecondsToMin(news.secondsLong)}</p>

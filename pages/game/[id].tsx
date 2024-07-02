@@ -124,7 +124,7 @@ const GamePage = () => {
                             <strong>Jogo sem notícias até o momento!⌛</strong>
                         </p>
                     ): game?.news?.map((news) => (
-                        <NewsList key={news.id} news={news} />    
+                        <NewsList key={news.id} news={news} game={game} />    
                      ))}
                 </Container>
                 <Footer/>
