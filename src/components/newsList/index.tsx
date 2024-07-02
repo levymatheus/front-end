@@ -23,7 +23,7 @@ const NewsList = function ({news, game}: props) {
     }
 
     const handleNewsPlayer = () => {
-        router.push(`/game/news/${news.order - 1}?gameId=${game.id}`)
+        router.push(`/game/news/${news.order - 1}?gameId=${game.id}&newId=${news.id}`)
     }
 
     return (

@@ -7,11 +7,25 @@ import gameService, { GameType } from "@/src/services/gameService";
 import { Container } from "reactstrap";
 import SearchCard from "@/src/components/searchCard";
 import Footer from "@/src/components/common/footer";
+import PageSpinner from "@/src/components/common/spinner";
 
 const Search = () => {
     const router = useRouter()
     const searchName:any = router.query.name
     const [searchResult, setSearchResult] = useState<GameType[]>([])
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() =>{
+        if(!sessionStorage.getItem('gamersnews-token')) {
+            router.push("/login")
+        } else {
+            setLoading(false)
+        }
+    }, [])
+
+    if (loading) {
+        return <PageSpinner />
+    }
 
     const searchGames = async () => {
         const res = await gameService.getSearch(searchName)

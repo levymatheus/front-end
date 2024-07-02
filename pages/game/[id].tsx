@@ -10,11 +10,13 @@ import NewsList from '@/src/components/newsList';
 import Footer from '@/src/components/common/footer';
 
 const GamePage = () => {
+    const [loading, setLoading] = useState(true)
     const [game, setGame] = useState<GameType>()
     const [liked, setLiked] = useState<boolean>(false)  
     const [favorited, setFavorited] = useState(false)
     const router = useRouter()
     const { id } = router.query
+
 
     const getGame = async () => {
         if (typeof id !== 'string') return
@@ -32,6 +34,17 @@ const GamePage = () => {
         }
     }, [id])
 
+    useEffect(() =>{
+        if(!sessionStorage.getItem('gamersnews-token')) {
+            router.push("/login")
+        } else {
+            setLoading(false)
+        }
+    }, [])
+
+    if (loading) {
+        return <PageSpinner />
+    }
 
     const handleLikeGame = async () => {
         if (typeof id !== 'string') return
@@ -54,6 +67,7 @@ const GamePage = () => {
             setFavorited(false);
         }
     };
+
 
     if(game === undefined) return <PageSpinner />
 
