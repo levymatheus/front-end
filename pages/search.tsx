@@ -1,3 +1,4 @@
+// ./pages/search.tsx
 import styles from "../styles/search.module.scss";
 import Head from "next/head";
 import HeaderAuth from "@/src/components/common/headerAuth";
@@ -10,31 +11,33 @@ import Footer from "@/src/components/common/footer";
 import PageSpinner from "@/src/components/common/spinner";
 
 const Search = () => {
-    const router = useRouter()
-    const searchName:any = router.query.name
-    const [searchResult, setSearchResult] = useState<GameType[]>([])
-    const [loading, setLoading] = useState(true)
-
-    useEffect(() =>{
-        if(!sessionStorage.getItem('gamersnews-token')) {
-            router.push("/login")
-        } else {
-            setLoading(false)
-        }
-    }, [])
-
-    if (loading) {
-        return <PageSpinner />
-    }
-
-    const searchGames = async () => {
-        const res = await gameService.getSearch(searchName)
-        setSearchResult(res.data.games)
-    }
+    const router = useRouter();
+    const searchName: any = router.query.name;
+    const [searchResult, setSearchResult] = useState<GameType[]>([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        searchGames()
-    }, [searchName])
+        const checkTokenAndLoadData = async () => {
+            if (!sessionStorage.getItem('gamersnews-token')) {
+                router.push("/login");
+            } else {
+                setLoading(false);
+            }
+        };
+
+        checkTokenAndLoadData();
+    }, [router]);
+
+    useEffect(() => {
+        const searchGames = async () => {
+            const res = await gameService.getSearch(searchName);
+            setSearchResult(res.data.games);
+        };
+
+        if (searchName) {
+            searchGames();
+        }
+    }, [searchName]);
 
     return (
         <>
@@ -49,16 +52,18 @@ const Search = () => {
                 {searchResult.length >= 1 ? (
                     <div className={styles.searchResult}>
                         <Container className="d-flex flex-wrap justify-content-center gap-5 py-4">
-                        {searchResult?.map((game)=> ( 
-                            <SearchCard key={game.id} game={game} />
-                        ))}
-                    </Container>
+                            {searchResult.map((game) => (
+                                <SearchCard key={game.id} game={game} />
+                            ))}
+                        </Container>
                     </div>
-                    
-            ):( <div className={styles.searchResult}><p className={styles.noSearchResult} >Nenhum jogo encontrado</p></div>)}
-            
-             <div className={styles.headerFooterBg}>
-                    <Footer/>
+                ) : (
+                    <div className={styles.searchResult}>
+                        <p className={styles.noSearchResult}>Nenhum jogo encontrado</p>
+                    </div>
+                )}
+                <div className={styles.headerFooterBg}>
+                    <Footer />
                 </div>
             </main>
         </>

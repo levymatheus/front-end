@@ -10,7 +10,7 @@ import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 
 
-const homeAuth = function () {
+const HomeAuth = function () {
     const router = useRouter()
     const [loading, setLoading] = useState(true)
 
@@ -45,4 +45,4 @@ const homeAuth = function () {
 }
 
 
-export default homeAuth
+export default HomeAuth

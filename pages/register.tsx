@@ -61,7 +61,7 @@ const handleRegister = async (event: FormEvent<HTMLFormElement>) => {
             <Head>
                 <title>Gamers News - Registro</title>
                 <link rel="shortcut icon" href="/favicon_io/favicon.ico" type="image/x-icon" />
-                <script src="https://jsuites.net/v5/jsuites.js"></script>
+                
             </Head>
             <main className={styles.main}>
                 <HeaderGeneric logoUrl='/' btnUrl='/login' btnContent='Fazer login' />
