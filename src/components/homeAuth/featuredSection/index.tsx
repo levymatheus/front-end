@@ -26,7 +26,7 @@ const FeaturedSection = function () {
             <Container className="pt-4">
                 <p className={styles.title}>Destaques do competitivo: {game.name}</p>
                 <p className={styles.description}>{game.synopsis}</p>
-                <Link style={{ textDecoration: "none" }} href={`/games/${game.id}`}>
+                <Link style={{ textDecoration: "none" }} href={`/game/${game.id}`}>
                 <Button outline color="light" className={styles.button}>
                     ACESSE AGORA!
                     <img src="/control.svg" alt="buttonImg" className={styles.buttonImg}/>
