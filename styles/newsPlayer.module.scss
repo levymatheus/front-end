@@ -18,3 +18,17 @@
     }
     
 }
+
+.newsText {
+    text-align: left;
+    padding-top: 0.5rem; /* padding para dispositivos pequenos */
+    padding-bottom: 0.5rem; /* padding para dispositivos pequenos */
+    font-size: 1rem; /* tamanho de fonte para dispositivos pequenos */
+    font-weight: 400; /* equivalente a fw-normal */
+
+    @media (min-width: 768px) {
+        padding-top: 1rem; /* padding para dispositivos médios e grandes */
+        padding-bottom: 1rem; /* padding para dispositivos médios e grandes */
+        font-size: 1.25rem; /* tamanho de fonte para dispositivos médios e grandes */
+    }
+}
