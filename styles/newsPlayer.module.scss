@@ -19,7 +19,6 @@
     
 }
 
-
 .newsText {
     text-align: left;
     padding-top: 0.5rem; /* padding para dispositivos pequenos */
@@ -28,6 +27,8 @@
     font-weight: 400; /* equivalente a fw-normal */
     word-wrap: break-word; /* quebra de linha para palavras longas */
     white-space: normal; /* permite que o texto quebre em várias linhas */
+    overflow-wrap: break-word; /* permite que palavras longas quebrem */
+    hyphens: auto; /* adiciona hifens quando palavras longas quebram */
 
     @media (min-width: 768px) {
         padding-top: 1rem; /* padding para dispositivos médios e grandes */
