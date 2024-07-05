@@ -87,6 +87,7 @@ const NewsPlayer = () => {
             <Head>
                 <title>{game.news[newOrder].name}</title>
                 <link rel="shortcut icon" href="/favicon_io/favicon.ico" type="image/x-icon" />
+                 <meta name="viewport" content="width=device-width, initial-scale=1" />
             </Head>
             <main>
                 <HeaderGeneric logoUrl="/home" btnContent={'Mais notícias'} btnUrl={`/game/${gameId}`} />
