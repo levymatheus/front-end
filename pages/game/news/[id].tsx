@@ -94,7 +94,7 @@ const NewsPlayer = () => {
                     <p className={styles.gameTitle}>
                         {game.news[newOrder].name}
                     </p>
-                    <p className="text-left py-4 fs-5 fw-normal">{game.news[newOrder].textNews}</p>
+                    <p className="text-left py-md-4 py-2 fs-md-5 fs-6 fw-normal">{game.news[newOrder].textNews}</p>
                     {typeof window === 'undefined' ? null : (
                         <ReactPlayer className={styles.player}
                             url={`${process.env.NEXT_PUBLIC_BASEURL}/news/stream?videoUrl=${game.news[newOrder].videoUrl}&token=${sessionStorage.getItem("gamersnews-token")}`} controls config={{
