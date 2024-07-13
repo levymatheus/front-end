@@ -2,11 +2,8 @@ import Head from "next/head";
 import styles from "../styles/HomeNoAuth.module.scss";
 import { ReactNode } from "react";
 
-interface indexPageProps {
-  children?: ReactNode;
-}
 
-const MaintenancePage = ({ children }: indexPageProps) => {
+const MaintenancePage = () => {
   return (
     <>
       <Head>
