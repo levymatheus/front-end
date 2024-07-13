@@ -19,7 +19,10 @@ const MaintenancePage = ({ children }: indexPageProps) => {
         <h1>Estamos em Manutenção</h1>
         <p>Desculpe pelo transtorno. Estamos trabalhando para melhorar nosso site e voltaremos em breve!</p>
         <div className={styles.maintenanceImage}>
-          <img src="/images/maintenance.png" alt="Manutenção" />
+          <img src="/public/web-maintenance.png"alt="Manutenção" />
+        </div>
+        <div className={styles.maintenanceImage}>
+        <img src="/public/gamersNews.png" alt="Logo" />   
         </div>
       </main>
     </>
