@@ -1,7 +1,25 @@
-.sectionBackground {
-    background-image: linear-gradient(to bottom, #8b8b8b1a, #151515), url("../public/homeNoAuth/backgroundGame.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
+.maintenanceContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #f7f7f7;
+  }
+  
+  .maintenanceContainer h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .maintenanceContainer p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  
+  .maintenanceImage img {
+    width: 300px;
+    height: auto;
+  }
+  
