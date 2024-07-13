@@ -1,5 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/HomeNoAuth.module.scss";
+import Link from "next/link";
 
 
 
@@ -21,8 +22,9 @@ const MaintenancePage = () => {
         <div className={styles.maintenanceImage}>
         <img src="/gamersNews.png" alt="Logo" />   
         </div>
-        <p>Entre em contado com os desenvolvedores em caso de dúvida:</p>
-        <p>https://www.instagram.com/levymattheeus/ ou https://www.instagram.com/djandredantas/</p>
+        <p>Entre em contado com os desenvolvedores em caso de dúvidas:</p>
+        <Link className={styles.links} href="https://www.instagram.com/levymattheeus/"><p>https://www.instagram.com/levymattheeus/</p></Link>
+        <Link className={styles.links} href="https://www.instagram.com/djandredantas/"><p>https://www.instagram.com/djandredantas/</p></Link>
       </main>
     </>
   );
