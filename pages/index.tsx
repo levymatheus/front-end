@@ -14,7 +14,7 @@ const MaintenancePage = () => {
         <meta name="description" content="Estamos trabalhando para melhorar nosso site. Voltaremos em breve!" />
       </Head>
       <main className={styles.maintenanceContainer}>
-        <h1>Estamos em Manutenção</h1>
+        <h1>O site voltará amanhã</h1>
         <p>Desculpe pelo transtorno. Estamos trabalhando para melhorar nosso site e voltaremos em breve!</p>
         <div className={styles.maintenanceImage}>
           <img src="/web-maintenance.png"alt="Manutenção" />
